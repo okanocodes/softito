@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="name">İsim:</label>
+      <input name="name" id="name" type="text" />
+      <label for="surname">Soyisim:</label>
+      <input name="surname" id="surname" type="text" />
+      <label for="phone">Telefon:</label>
+      <input name="phone" id="phone" type="tel" />
+      <label for="resim">Resim:</label>
+      <input name="resim" id="resim" type="file" accept="image/*" />
+      <button type="submit">Gönder</button>
+    </form>
+
+    <div id="preview"></div>
+
+    <script>
+      const form = document.querySelector("form");
+      const preview = document.getElementById("preview");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = form.name.value;
+        const surname = form.surname.value;
+        const phone = form.phone.value;
+        const resim = form.resim.files[0];
+
+        if (resim) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const imgElement = document.createElement("img");
+            imgElement.src = event.target.result;
+            imgElement.alt = `${name} ${surname}`;
+            imgElement.style.maxWidth = "200px";
+            preview.appendChild(imgElement);
+          };
+
+          reader.onerror = function (error) {
+            console.error("Resim okunurken hata oluştu:", error);
+          };
+
+          reader.readAsDataURL(resim);
+        }
+
+        const infoElement = document.createElement("p");
+        infoElement.textContent = ` ${name}, ${surname}, ${phone}`;
+        preview.appendChild(infoElement);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 1</title>
+</head>
+<body>
+    <button id="button">click me</button>
+    <p id="text">hello world</p>
+
+    <script>
+        const button = document.getElementById('button')
+        const text = document.getElementById('text')
+
+
+
+
+        button.addEventListener('click', () => {
+            text.textContent = 'Bye Bye'
+        })
+    </script>
+</body>
+</html>

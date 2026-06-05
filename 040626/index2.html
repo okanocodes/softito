@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2 click</title>
+  </head>
+  <body>
+    <button id="button">click me</button>
+    <p id="text">hello world</p>
+
+    <script>
+      const button = document.getElementById("button");
+      const text = document.getElementById("text");
+
+      let counter = 0;
+
+      let isPrimeNumber = (number) =>  number % number == 0 && number % 1 == 0
+
+      button.addEventListener("click", () => {
+
+        counter++
+
+        if(isPrimeNumber(counter)){
+
+            text.textContent = `${counter} is prime number`
+
+        } else {
+
+            text.textContent = `${counter} is NOT prime number`
+
+        }
+          
+
+      });
+    </script>
+  </body>
+</html>

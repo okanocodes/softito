@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2 click</title>
+  </head>
+  <body>
+    <button id="button">click me</button>
+    <p id="text">hello world</p>
+
+    <script>
+      const button = document.getElementById("button");
+      const text = document.getElementById("text");
+
+      let counter = 0;
+
+      button.addEventListener("click", () => {
+
+        counter++
+
+        if(counter < 2){
+
+            text.textContent = "Bye Bye";
+
+        } else {
+
+            text.textContent = "Ünal Öztürk"
+
+        }
+          
+
+      });
+    </script>
+  </body>
+</html>

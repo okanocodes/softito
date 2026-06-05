@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      const box = document.getElementById("box");
+
+      const getRandomRgbColor = () => {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+      };
+
+let currentRotation = 0;
+
+      const updateBox = (el) => {
+        el.style.backgroundColor = getRandomRgbColor()
+        currentRotation += 45; 
+        el.style.rotate =`${currentRotation}deg` 
+
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.style.display = "grid";
+        document.body.style.placeItems = "center"
+        document.body.style.height = "100vh"
+        box.style.width = "500px";
+        box.style.height = "500px";
+        box.style.backgroundColor = "red";
+        box.style.transition = "all 1s ease-out"
+        
+
+        setInterval(updateBox, 3000, box)
+      });
+    </script>
+  </body>
+</html>

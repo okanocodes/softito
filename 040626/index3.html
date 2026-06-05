@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yoktan var etme</title>
+
+  </head>
+  <body>
+    <h1 id="text1"></h1>
+
+    <h2 id="text2">NABER</h2>
+
+    <script>
+      const text1 = document.getElementById("text1");
+      const text2 = document.getElementById("text2");
+
+      text2.style.opacity = "0"
+      text2.style.transition = "color 2s ease-out"
+      text2.style.color = "aquamarine"
+
+      document.addEventListener("readystatechange", () => {
+        if (document.readyState == "complete") {
+          console.log("ready...");
+          setTimeout(() => {
+            text1.textContent = "SELAM";
+            // text2.classList.add("active");
+            text2.style.opacity = "1"
+            text2.style.color = "darkcyan"
+
+            // text2.textContent = "NABER"
+          }, 2000);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="form">
+      <label for="name">İsim</label>
+      <input type="text" name="name" id="name" placeholder="İsim..." />
+      <label for="lastname">Soyisim</label>
+
+      <input
+        type="text"
+        name="lastname"
+        id="lastname"
+        placeholder="Soyisim..."
+      />
+      <label for="phone">Telefon</label>
+
+      <input type="tel" name="phone" id="phone" placeholder="Telefon..." />
+      <label for="image">Resim:</label>
+      <input type="file" id="image" name="image" accept="image/*" />
+
+      <button type="submit">Gönder</button>
+    </form>
+
+    <div id="preview"></div>
+
+    <script>
+      const form = document.querySelector(".form");
+      const preview = document.getElementById("preview");
+
+      const displayData = () => {
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        const lastname = formData.get("lastname");
+        const phone = formData.get("phone");
+        const imageFile = formData.get("image");
+
+        const imageURL = URL.createObjectURL(imageFile);
+        console.log("imageURL", imageURL);
+        const imgElement = document.createElement("img");
+        imgElement.src = imageURL;
+        imgElement.alt = "Kullanıcı tarafından yüklenen resim";
+        imgElement.style.maxWidth = "300px";
+
+        preview.appendChild(imgElement);
+
+
+
+        const nameEl = document.createElement("p")
+        nameEl.textContent = name
+        preview.appendChild(nameEl);
+
+
+        const lastNameEl = document.createElement("p")
+        lastNameEl.textContent = lastname
+        preview.appendChild(lastNameEl);
+
+
+        const phoneEl = document.createElement("p")
+        phoneEl.textContent = phone
+        preview.appendChild(phoneEl)
+
+
+   
+      };
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        displayData();
+      });
+    </script>
+  </body>
+</html>
