@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .classic-btn {
+        background-color: #679267;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+        cursor: pointer;
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100 p-8">
+    <div class="max-w-xl mx-auto bg-white bg-white p-6 rounded shadow">
+      <h1>modern css ve tailwind css</h1>
+      <div class="mb-6">
+        <h2 class="font-semibold mb-2">1. klasik css vs tailwind</h2>
+        <div class="flex gap-4">
+          <button class="classic-btn">Klasik css buton</button>
+          <button
+            class="bg-[#679267] text-white px-4 py-3 rounded-lg border border-black pointer"
+          >
+            Tailwinds CSS buton
+          </button>
+        </div>
+      </div>
+      <div class="mb-6">
+        <h2 class="font-semibold mb-2">2. Temel Sınıflar</h2>
+        <div class="space-y-2">
+          <p class="text-lg text-red-500 font-bol">
+            kırmızı büyük metin((text-Ig text-red-500 font-bold))
+          </p>
+          <div class="flex gap-5">
+            <div class="bg-yellow-100 border p-4 rounded text-sm">
+              Sarı kutu(bg-yellow-100 border p4 rounded text-sm)
+            </div>
+            <div class="bg-red-100 border p-4 rounded text-sm">
+              Kırmızı kutu(bg-red-100 border p4 rounded text-sm)
+            </div>
+            <div class="bg-blue-100 border p-4 rounded text-sm">
+              Mavi kutu(bg-blue-100 border p4 rounded text-sm)
+            </div>
+          </div>
+
+          <div class="flex justify-between">
+            <div
+              class="bg-slate-800 text-white p-4 text-center hover:bg-slate-700"
+            >
+              Hover deneme
+            </div>
+            <div
+              class="bg-teal-800 text-white p-4 text-center hover:bg-teal-700"
+            >
+              Hover deneme
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 border-t pt-6 flex flex-wrap gap-3 text-xs">
+          <a
+            href="form.html"
+            class="bg-indigo-600 text-white font-bold px-4 py-2 rounded hover:bg-indigo-750 transition-colors"
+            >form</a
+          >
+          <a
+            href="flex.html"
+            class="bg-cyan-600 text-white font-bold px-4 py-2 rounded hover:bg-cyan-750 transition-colors"
+            >flex</a
+          >
+          <a
+            href="website.html"
+            class="bg-slate-800 text-white font-bold px-4 py-2 rounded hover:bg-slate-700 transition-colors"
+            >website</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
