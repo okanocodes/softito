@@ -9,7 +9,7 @@
 
   <body class="bg-slate-100 p-8 flex flex-col items-center">
     <div
-      class="max-w-xl w-full bg-white p-6 rounded-md shadow-xl gap-10 flex flex-col"
+      class="max-w-3xl w-full bg-white p-6 rounded-md shadow-xl gap-10 flex flex-col"
     >
       <section>
         <h1 class="text-2xl text-slate-400 font-bold mb-1">
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div
-          class="text-white flex flex-wrap gap-4 bg-slate-55 p-3 border rounded"
+          class="flex flex-wrap gap-4 text-white bg-slate-55 p-3 border rounded"
         >
           <div class="bg-blue-500 p-3 rounded">Kutu 1</div>
           <div class="bg-yellow-500 p-3 rounded">Kutu 2</div>
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div
-          class="text-white flex flex-col md:flex-row gap-4 bg-slate-55 p-3 border rounded"
+          class="flex flex-col md:flex-row gap-4 text-white bg-slate-55 p-3 border rounded"
         >
           <div class="bg-blue-500 p-3 rounded">Kutu 1</div>
           <div class="bg-yellow-500 p-3 rounded">Kutu 2</div>
@@ -62,7 +62,7 @@
       </section>
 
       <section>
-        <h1 class="text-2xl text-slate-400 font-bold mb-1">
+        <h1 class="text-2xl text-slate-400 font-bold mb-1 break-all">
           3 - grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))]
         </h1>
         <div class="relative my-4">
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div
-          class="text-white grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 bg-slate-55 p-3 border rounded"
+          class="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 text-white bg-slate-55 p-3 border rounded"
         >
           <div class="bg-blue-500 p-3 rounded">Kutu 1</div>
           <div class="bg-yellow-500 p-3 rounded">Kutu 2</div>
@@ -103,7 +103,7 @@
           </div>
         </div>
         <div
-          class="text-white grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-55 p-3 border rounded"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4 text-white bg-slate-55 p-3 border rounded"
         >
           <div class="bg-blue-500 p-3 rounded">Kutu 1</div>
           <div class="bg-yellow-500 p-3 rounded">Kutu 2</div>
@@ -116,7 +116,7 @@
       const codeElement = document.getElementById("flex-wrap");
       codeElement.textContent = `
       <div
-        class="text-white flex flex-wrap gap-4 bg-slate-55 p-3 border rounded"
+        class="flex flex-wrap gap-4 text-white bg-slate-55 p-3 border rounded"
       >
        ...
        ...
@@ -127,7 +127,7 @@
       const codeElement2 = document.getElementById("flex-col-md-flex-row");
       codeElement2.textContent = `
       <div
-        class="text-white flex flex-col md:flex-row gap-4 bg-slate-55 p-3 border rounded"
+        class="flex flex-col md:flex-row gap-4 text-white bg-slate-55 p-3 border rounded"
       >
        ...
        ...
@@ -138,7 +138,7 @@
       const codeElement3 = document.getElementById("grid-cols");
       codeElement3.textContent = `
       <div
-        class="text-white grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 bg-slate-55 p-3 border rounded"
+        class="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 text-white bg-slate-55 p-3 border rounded"
       >
        ...
        ...
@@ -151,7 +151,7 @@
       );
       codeElement4.textContent = `
       <div
-        class="text-white grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-55 p-3 border rounded"
+        class="grid grid-cols-1 md:grid-cols-3 gap-4 text-white bg-slate-55 p-3 border rounded"
       >
        ...
        ...
