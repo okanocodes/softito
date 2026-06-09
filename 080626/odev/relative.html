@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS - position: relative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-slate-100 p-8">
+    <div class="max-w-4xl mx-auto space-y-12">
+      <h1 class="text-4xl font-bold">
+        Tailwind CSS: <code>relative</code> Kullanımı
+      </h1>
+
+      <p class="text-slate-700">
+        <code>position: relative</code> CSS'te iki temel amaçla kullanılır:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Elemanın kendisini bulunduğu yerden kaydırmak</li>
+        <li>Absolute elemanlar için referans noktası oluşturmak</li>
+      </ul>
+
+      <!-- ÖRNEK 1 -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold mb-4">
+          1. Elemanın Kendisini Kaydırmak
+        </h2>
+
+        <p class="mb-4 text-slate-700">
+          <code>relative</code> kullanıldığında eleman <code>left</code>,
+          <code>right</code>, <code>top</code> veya <code>bottom</code> ile
+          hareket ettirilebilir. Ancak elemanın kapladığı alan korunur.
+        </p>
+
+        <div class="space-y-2 border p-4 rounded">
+          <div class="bg-blue-500 text-white p-3 rounded">Birinci Kutu</div>
+
+          <div class="relative left-8 bg-green-500 text-white p-3 rounded">
+            İkinci Kutu (left-8 ile sağa kaydırıldı)
+          </div>
+
+          <div class="bg-red-500 text-white p-3 rounded">Üçüncü Kutu</div>
+        </div>
+
+        <div class="mt-4 bg-slate-100 p-4 rounded">
+          <p class="font-semibold mb-2">Kullanılan Tailwind Kodları:</p>
+
+          <pre class="text-sm overflow-auto">
+&lt;div class="relative left-8 bg-green-500"&gt;
+  İkinci Kutu
+&lt;/div&gt;
+          </pre>
+        </div>
+
+        <p class="mt-4 text-slate-700">
+          Dikkat ederseniz ikinci kutu sağa kayıyor fakat üçüncü kutu onun
+          yerine gelmiyor. Çünkü <code>relative</code>, elemanın orijinal yerini
+          layout içerisinde korumaya devam ediyor.
+        </p>
+      </section>
+
+      <!-- ÖRNEK 2 -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold mb-4">
+          2. Absolute Elemanlar İçin Referans Oluşturmak
+        </h2>
+
+        <p class="mb-4 text-slate-700">
+          Bu kullanım gerçek projelerde çok daha yaygındır. Parent elemana
+          <code>relative</code> verilir, child elemana ise
+          <code>absolute</code> verilir.
+        </p>
+
+        <div class="relative w-72 h-40 bg-slate-200 rounded overflow-hidden">
+          <span
+            class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded"
+          >
+            Yeni
+          </span>
+
+          <div class="p-4">
+            <h3 class="font-bold">Ürün Kartı</h3>
+            <p class="text-sm text-slate-600">
+              Absolute badge parent'a göre konumlanıyor.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-4 bg-slate-100 p-4 rounded">
+          <p class="font-semibold mb-2">Kullanılan Tailwind Kodları:</p>
+
+          <pre class="text-sm overflow-auto">
+&lt;div class="relative"&gt;
+  &lt;span class="absolute top-2 right-2"&gt;
+    Yeni
+  &lt;/span&gt;
+&lt;/div&gt;
+          </pre>
+        </div>
+
+        <p class="mt-4 text-slate-700">
+          Buradaki <code>relative</code> kutuyu hareket ettirmiyor. Sadece
+          içerisindeki <code>absolute</code> elemanın koordinat sistemini
+          belirliyor.
+        </p>
+      </section>
+
+      <section class="bg-indigo-50 border border-indigo-200 p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-3">Özet</h2>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-indigo-100">
+              <th class="border p-2 text-left">Kullanım</th>
+              <th class="border p-2 text-left">Amaç</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="border p-2">
+                <code>relative left-8</code>
+              </td>
+              <td class="border p-2">Elemanı bulunduğu yerden kaydırır.</td>
+            </tr>
+
+            <tr>
+              <td class="border p-2">
+                <code>relative + absolute</code>
+              </td>
+              <td class="border p-2">
+                Absolute elemanlar için referans noktası oluşturur.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

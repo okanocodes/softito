@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+
+    <title>Flex Column & Order First</title>
+  </head>
+
+  <!--
+    min-h-screen   Sayfa yüksekliği ekran kadar olsun
+    flex           Body'yi flex container yapar
+    flex-col       İçerikleri dikey sıralar
+    items-center   Yatayda ortalar
+    justify-center Dikeyde ortalar
+  -->
+  <body
+    class="bg-indigo-50 text-gray-800 font-sans min-h-screen p-8 flex flex-col items-center justify-center gap-6"
+  >
+    <div class="text-center max-w-md">
+      <!-- Başlık Bölümü -->
+      <div>
+        <h1 class="text-xl font-bold text-gray-900 mb-2">
+          Fiyatlandırma Kartı Flex Column
+        </h1>
+
+        <p class="text-xs text-gray-500">
+          Kart elemanları üst üste sıralamak için flex-col, öne çıkan rozeti en
+          üstte göstermek için ise order-first kullanılır.
+        </p>
+      </div>
+
+      <!--
+        FİYATLANDIRMA KARTI
+
+        flex flex-col  İçerideki elemanlar alt alta sıralanır.
+        gap-4          Elemanlar arasında boşluk bırakır.
+      -->
+      <div
+        class="w-full max-w-xs bg-white border border-gray-200 rounded-2xl p-6 flex flex-col gap-4 shadow-sm"
+      >
+        <!-- Paket Bilgileri -->
+        <div>
+          <h2 class="text-sm font-bold text-gray-800 uppercase tracking-wider">
+            Standart Paket
+          </h2>
+
+          <p class="text-2xl font-extrabold text-gray-900 mt-1">99 TL / Ay</p>
+        </div>
+
+        <!--
+          self-start   Rozetin sadece kendi içeriği kadar genişlemesini sağlar.
+          order-first  HTML'de ikinci sırada olsa bile flex içerisinde ilk sırada görüntülenmesini sağlar.
+        -->
+        <div
+          class="px-2.5 py-1 bg-indigo-100 border border-indigo-200 text-indigo-700 text-[9px] font-extrabold rounded-full self-start order-first uppercase tracking-wide"
+        >
+          En Popüler Paket (order-first)
+        </div>
+
+        <!-- Özellikler -->
+        <div
+          class="text-xs text-gray-500 space-y-2 border border-gray-100 pt-4"
+        >
+          <p>1 Sınırsız Proje</p>
+          <p>25 tane kişisel proje</p>
+          <p>Grup Çalışması</p>
+        </div>
+
+        <!--
+          w-full Buton kartın tamamını kaplar.
+          hover:bg-indigo-700 Hover efekti.
+        -->
+        <button
+          class="w-full py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold transition-colors mt-2"
+        >
+          Satın Al
+        </button>
+      </div>
+
+      <!--
+
+        HTML sırası:
+
+        1. Başlık
+        2. Rozet
+        3. Özellikler
+        4. Buton
+
+        Ancak rozet üzerinde order-first olduğu için
+        ekranda ilk eleman olarak görünür.
+      -->
+    </div>
+  </body>
+</html>
