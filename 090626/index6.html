@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <div>
+        <h1>map() ve filter() dizi methodları</h1>
+      </div>
+      <div>
+        <label for="input-search">Ürün arama</label>
+        <input type="text" id="input-search" />
+      </div>
+      <div>
+        <label for="input-price-limit">Max fiyat</label>
+        <input type="number" id="input-price-limit" value="50000" />
+      </div>
+      <div>
+        <button id="btn-filter">Filtrele</button>
+      </div>
+
+      <div>
+        <h3>Ürün listesi</h3>
+        <div id="products-list"></div>
+      </div>
+    </center>
+
+    <script>
+      const products = [
+        {
+          id: 1,
+          ad: "iPhone 17 Pro Max",
+          fiyat: 110000,
+        },
+        {
+          id: 2,
+          ad: "iPhone 16 Pro Max",
+          fiyat: 25000,
+        },
+        {
+          id: 3,
+          ad: "iPhone 15 Pro Max",
+          fiyat: 47590,
+        },
+        {
+          id: 4,
+          ad: "iPhone 14 Pro Max",
+          fiyat: 99000,
+        },
+        {
+          id: 5,
+          ad: "iPhone 13 Pro Max",
+          fiyat: 78000,
+        },
+      ];
+
+      const listele = () => {
+        const arama = document.getElementById('input-search').value.toLowerCase();
+        const limit = parseFloat(document.getElementById('input-price-limit').value) || 99999;
+
+        const filterelenmis = products.filter(product => {
+            return product.ad.toLocaleLowerCase().includes(arama) && product.fiyat <= limit
+        })
+
+        const kartlarHTML = filterelenmis.map(product => `
+        <div>
+            <span>${product.ad}</span>
+            <span>${product.fiyat}</span>
+        </div>
+        `).join('')
+
+        const karttest = filterelenmis.map(product => `
+        <div>
+            <span>${product.ad}</span>
+            <span>${product.fiyat}</span>
+        </div>
+        `)
+
+        console.log("karttest:", karttest)
+
+        console.log("kartlarHTML", kartlarHTML)
+
+
+
+        document.getElementById('products-list').innerHTML = kartlarHTML || `<div></div>`
+
+      }
+
+
+      document.getElementById('btn-filter').addEventListener('click', listele)
+      listele();
+    </script>
+  </body>
+</html>
