@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body
+    class="bg-gray-100 p-4 font-sans text-gray-800 flex items-center justify-center min-h-screen"
+  >
+    <div class="w-full gap-4 flex flex-col items-center justify-center">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Map</h2>
+        <pre>
+        <code>
+        const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+        const mapped = array.map((x) => x * 2);
+
+        result: [2, 8, 18, 32, 50, 72, 98, 128, 162, 200]
+        </code>
+    </pre>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Find</h2>
+        <pre>
+        <code>
+        const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+        const found = array.find((element) => element > 10);
+
+        result: 16 // koşulu sağlayan ilk eleman
+
+        </code>
+    </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Reduce</h2>
+        <pre>
+        <code>
+        const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+        const sum = array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+        result: 385
+        </code>
+    </pre>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Filter</h2>
+        <pre>
+        <code>
+        const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+        const filtered = array.filter((x) => x > 20);
+
+        result: [25, 36, 49, 64, 81, 100]
+        </code>
+    </pre>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Some</h2>
+        <pre>
+            <code>
+            const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+    
+            const even = (element) => element % 2 === 0;
+    
+            console.log(array.some(even));
+    
+            result: true
+            </code>
+        </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Every</h2>
+        <pre>
+                <code>
+                const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+        
+                function isBigEnough(element, index, array) {
+                    return element >= 1;
+                }
+        
+                console.log(array.every(isBigEnough));
+        
+                result: true
+                </code>
+            </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Push</h2>
+        <pre>
+                    <code>
+                    const animals = ["pigs", "goats", "sheep"];
+            
+                    animals.push("cows");
+            
+                    console.log(animals);
+            
+                    result: ["pigs", "goats", "sheep", "cows"]
+                    </code>
+                </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Includes</h2>
+        <pre>
+                        <code>
+                        const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+                
+                        console.log(array.includes(49));
+                
+                        result: true
+                        </code>
+                    </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">String toLowerCase</h2>
+        <pre>
+            <code>
+                console.log("ALPHABET".toLowerCase());
+                    
+                result: 'alphabet'
+            </code>
+        </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">String toUpperCase</h2>
+        <pre>
+                <code>
+                    console.log("alphabet".toUpperCase());
+                        
+                    result: 'ALPHABET'
+                </code>
+            </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">String Trim</h2>
+        <pre>
+                    <code>
+                        const greeting = "   Hello world!   ";
+                
+                        console.log(greeting);
+                        
+                        result: "   Hello world!   ";
+                
+                        console.log(greeting.trim());
+                        
+                        result: "Hello world!";
+                    </code>
+            </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">String Split</h2>
+        <pre>
+                            <code>
+                                let text = "How are you doing today?";
+                                const myArray = text.split(" ");
+                                console.log(myArray);
+                                
+                                result: ["How", "are", "you", "doing", "today?"]
+                                
+                                split methodu, bir stringi belirli bir ayırıcıya göre parçalara böler ve 
+                                bu parçaları bir dizi (array) olarak döndürür.
+                                Yukarıdaki örnekte, boşluk karakteri (" ") kullanılarak cümle kelimelere ayrılmıştır.
+                            </code>
+                </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Array Join</h2>
+        <pre>
+            <code>
+                const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                const joinedFruits = fruits.join();
+                console.log(joinedFruits);
+                                        
+                result: "Banana,Orange,Apple,Mango"
+                                        
+                join methodu, bir dizi (array) içindeki elemanları birleştirerek tek bir string oluşturur.
+                Varsayılan olarak, elemanlar arasına virgül (",") konur. 
+                Ancak, istenirse farklı bir ayırıcı da belirtilebilir.
+              </code>
+        </pre>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">parseFloat</h2>
+        <pre>
+                <code>
+                    parseFloat(10); // 10
+                    parseFloat("10"); // 10
+                    parseFloat("10.33"); // 10.33
+                    parseFloat("10 6"); // 10
+                    parseFloat("selam"); // Expected output: NaN
+
+    
+                    parseFloat fonksiyonu, bir stringi veya sayıyı ondalık bir sayıya dönüştürür.
+                    Eğer string içinde geçerli bir ondalık sayı varsa, bu sayı döndürülür.
+                    Eğer string içinde geçerli bir ondalık sayı yoksa, NaN (Not a Number) döndürülür.
+                </code>
+            </pre>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">setInterval</h2>
+        <pre>
+                    <code>
+                        setInterval(myTimer, 1000);
+        
+                        function myTimer() {
+                            const date = new Date();
+                            document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+                        }
+
+                        setInterval fonksiyonu, belirli bir zaman aralığında (milisaniye cinsinden) bir fonksiyonu
+                        tekrar tekrar çağırmak için kullanılır.
+                        Yukarıdaki örnekte, myTimer fonksiyonu her 1000 milisaniyede (1 saniye) bir çağrılır 
+                        ve geçerli zamanı günceller
+                    </code>
+                </pre>
+        <p id="demo" class="text-center text-lg font-mono mt-4"></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold text-gray-900 mb-2">clearInterval</h2>
+        <pre>
+                        <code>
+                            function stopTimer() {
+                                clearInterval(myInterval);
+                            }
+
+                            clearInterval fonksiyonu, setInterval ile başlatılan bir zamanlayıcıyı durdurmak için kullanılır.
+                            Yukarıdaki örnekte, stopTimer fonksiyonu çağrıldığında myInterval zamanlayıcısı durdurulur ve artık çalışmaz.
+                        </code>
+                    </pre>
+        <button
+          onclick="stopTimer()"
+          class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+        >
+          Stop Timer
+        </button>
+      </div>
+    </div>
+    <script>
+      const array = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+      // Pass a function to map
+      const mapped = array.map((x) => x * 2);
+
+      const found = array.find((element) => element > 10);
+
+      const sum = array.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0,
+      );
+
+      const filtered = array.filter((x) => x > 20);
+
+      // Checks whether an element is even
+      const even = (element) => element % 2 === 0;
+
+      console.log(array.some(even));
+      // Expected output: true
+
+      function isBigEnough(element, index, array) {
+        return element >= 1;
+      }
+
+      array.every(isBigEnough);
+      // Expected output: true
+
+      const animals = ["pigs", "goats", "sheep"];
+
+      animals.push("cows");
+
+      console.log(animals);
+      // Expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+      console.log(array.includes(49));
+      // Expected output: true
+
+      console.log("ALPHABET".toLowerCase()); // 'alphabet'
+
+      console.log("alphabet".toUpperCase()); // 'ALPHABET'
+
+      const greeting = "   Hello world!   ";
+
+      console.log(greeting);
+      // Expected output: "   Hello world!   ";
+
+      console.log(greeting.trim());
+      // Expected output: "Hello world!";
+
+      let text = "How are you doing today?";
+      const myArray = text.split(" ");
+      console.log(myArray);
+      // Expected output: Array ["How", "are", "you", "doing", "today?"]
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      const joinedFruits = fruits.join();
+      console.log(joinedFruits);
+      // Expected output: "Banana,Orange,Apple,Mango"
+
+      parseFloat(10); // Expected output: 10
+      parseFloat("10"); // Expected output: 10
+      parseFloat("10.33"); // Expected output: 10.33
+      parseFloat("10 6"); // Expected output: 10
+      parseFloat("selam"); // Expected output: NaN
+
+      const myInterval = setInterval(myTimer, 1000);
+
+      function myTimer() {
+        const date = new Date();
+        document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+      }
+
+      function stopTimer() {
+        clearInterval(myInterval);
+        console.log("Timer stopped");
+      }
+    </script>
+  </body>
+</html>
