@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const ArrayState = () => {
     const [gorevler, setGorevler] = useState([
@@ -43,13 +43,15 @@ const ArrayState = () => {
 
         // itemRefs.current.get(yeni.id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
 
-        setTimeout(() => {
-            gorevRef.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'nearest'
-            });
-        }, 500)
+        // setTimeout(() => {
+        //     gorevRef.current.scrollIntoView({
+        //         behavior: 'smooth',
+        //         block: 'nearest',
+        //         inline: 'nearest'
+        //     });
+        // }, 500)
+
+
 
     };
 
@@ -66,6 +68,15 @@ const ArrayState = () => {
     };
 
     const tamamlananlarSayisi = gorevler.filter((g) => g.tamamlandi).length;
+
+
+    useEffect(() => {
+        gorevRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'nearest'
+        });
+    }, [gorevler]);
 
     return (
         <div className="p-4">
@@ -98,7 +109,7 @@ const ArrayState = () => {
                             <div
                                 key={g.id}
                                 className={` todo-item ${g.tamamlandi ? "todo-item-completed" : ""}`}
-                                ref={gorevRef}
+
                             // ref={(node) => {
                             //     if (node) {
                             //         itemRefs.current.set(g.id, node);
@@ -122,6 +133,7 @@ const ArrayState = () => {
                                 >Sil</button>
                             </div>
                         ))}
+                        <div ref={gorevRef} className="h-13"></div>
                     </div>
                 )}
             </div>
