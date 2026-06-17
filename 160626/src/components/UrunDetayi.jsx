@@ -3,21 +3,26 @@ import { useEffect } from "react";
 export default function UrunDetayi({ product, onClose, onSepeteEkle }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
+      // Eğer Escape tuşuna basıldıysa modalı kapat
       if (e.key === "Escape") {
         onClose();
       }
     };
+    // keydown eventini dinle
     window.addEventListener("keydown", handleKeyDown);
-    
+
     return () => {
+      // component kapandığında dinleyiciyi kaldır
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
 
   useEffect(() => {
+    // Modal açıkken sayfa kaydırmasını engelle
     document.body.style.overflow = "hidden";
-    
+
     return () => {
+      // Modal kapatıldığında sayfa kaydırmasını tekrar aç
       document.body.style.overflow = "";
     };
   }, []);
@@ -31,38 +36,45 @@ export default function UrunDetayi({ product, onClose, onSepeteEkle }) {
     };
   }, [product]);
 
+  // Ürün stok uyarısı üretmek için fonksiyon
   const getInventoryWarning = () => {
+    // Ürün yoksa uyarı yok
     if (!product) return null;
+    // Stok bitmişse tehlike seviyesi döndür
     if (product.stok === 0) {
       return {
         level: "danger",
         text: "Tükendi: Bu ürün geçici olarak temin edilemiyor."
       };
     }
+    // Stok azalmışsa başka bir uyarı seviyesi döndür
     if (product.stok < 5) {
       return {
         level: "warning",
         text: `Düşük Stok: Bu üründen son ${product.stok} adet kaldı!`
       };
     }
+    // Diğer durumlarda uyarı yok
     return null;
   };
 
+  // Uyarı nesnesini hesapla ve render için hazırla
   const warning = getInventoryWarning();
 
+  // Ürün yoksa modal'ı render etme
   if (!product) return null;
 
   return (
     <div onClick={onClose} className="modal-maske">
       <div onClick={(e) => e.stopPropagation()} className="modal-kutu">
-        
+
         <div className="modal-resim-bolumu">
           <span className="modal-kategori-badge">{product.kategori}</span>
           <span className="modal-resim-emoji">{product.gorsel}</span>
         </div>
 
         <div className="modal-icerik-bolumu">
-          
+
           <div className="modal-baslik-alani">
             <div>
               <span className="marka-etiketi">{product.marka}</span>

@@ -8,17 +8,25 @@ export default function SepetGezgini({
   onUrunCikar
 }) {
 
+  // Sepetteki ürünlerin toplam fiyatını hesapla ve sepet değişince yeniden hesaplanmasını sağla
   const toplamFiyat = useMemo(() => {
+    // Her ürün için fiyat çarıp adet hesabını yap ve bunları topla
     return sepet.reduce((toplam, item) => toplam + item.fiyat * item.adet, 0);
   }, [sepet]);
 
+  // Bedava kargo limiti
   const kargoLimit = 1500;
+  // Toplam fiyat limiti aşılmadıysa kargo ücreti uygula aksi halde kargo ücretsiz
   const kargoUcreti = toplamFiyat >= kargoLimit || toplamFiyat === 0 ? 0 : 50;
+  // Kargo bedava olana kadar gereken tutarı hesapla
   const kalanTutar = Math.max(0, kargoLimit - toplamFiyat);
+  // İlerleme çubuğu için yüzde değerini hesapla
   const ilerlemeYuzdesi = Math.min((toplamFiyat / kargoLimit) * 100, 100);
 
+  // Sepet panelinin açık mı kapalı mı olduğunu belirleyecek class adını ayarla
   const drawerClass = `sepet-drawer ${isOpen ? "sepet-drawer-visible" : "sepet-drawer-hidden"}`;
 
+  // Sepet paneli kapalıysa hiçbir şey render etme
   if (!isOpen) return null;
 
   return (
@@ -61,7 +69,7 @@ export default function SepetGezgini({
                   <div className="sepet-eleman-bilgi">
                     <span className="sepet-urun-ad">{item.ad}</span>
                     <span className="sepet-urun-fiyat">{item.fiyat.toFixed(2)} TL</span>
-                    
+
                     <div className="sepet-adet-kontrolleri">
                       <button
                         onClick={() => onAdetGuncelle(item.id, item.adet - 1)}

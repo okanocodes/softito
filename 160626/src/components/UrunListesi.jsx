@@ -11,9 +11,12 @@ export default function UrunListesi({
   searchTerm
 }) {
 
+  // Arama terimine göre ürünleri filtrele
   const filteredProducts = products.filter(
     (item) =>
+      // Ürün adı arama terimini içeriyorsa veya
       item.ad.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      // marka adı arama terimini içeriyorsa ürünü seç
       item.marka.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -25,7 +28,7 @@ export default function UrunListesi({
 
       <div className="app-card-body">
         <div className="etiket-izgara">
-          
+
           <div className="filtre-paneli">
             <span className="filtre-baslik">Kategoriler</span>
             <div className="kategori-secenekleri">
@@ -114,7 +117,7 @@ export default function UrunListesi({
                       <div>
                         <span className="marka-etiketi">{item.marka}</span>
                         <h3 className="urun-baslik-etiketi">{item.ad}</h3>
-                        
+
                         <div className="puan-satiri">
                           <span>★ {item.degerlendirme.toFixed(1)}</span>
                           <span className="yorum-adedi-etiket">({item.yorumAdedi} yorum)</span>

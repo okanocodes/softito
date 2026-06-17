@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
 
 export default function Baslik({ env, sepetAdedi, onSepetAc, searchVal, onSearchChange }) {
+  // Başlangıçta pencere genişliğini ve yüksekliğini state olarak ayarla
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
   });
 
   useEffect(() => {
+    // Pencere yeniden boyutlandırıldığında çağrılacak fonksiyon
     const handleResize = () => {
+      // Yeni pencere boyutlarını state'e kaydet
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight
       });
     };
 
+    // resize eventine dinleyici ekle
     window.addEventListener("resize", handleResize);
     return () => {
+      // Component unmount olduğunda dinleyiciyi kaldır
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -47,7 +52,7 @@ export default function Baslik({ env, sepetAdedi, onSepetAc, searchVal, onSearch
         <div className="kullanici-kontrolleri">
           <div className="menu-linki">Giriş Yap</div>
           <div className="menu-linki">Siparişlerim</div>
-          
+
           <button onClick={onSepetAc} className="sepet-tetikleyici">
             <span>🛒 Sepetim</span>
             {sepetAdedi > 0 && (
