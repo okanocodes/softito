@@ -1,23 +1,17 @@
 import ProductCard from "./ProductCard";
 
-export default function ProductGrid({ products }) {
+export default function ProductGrid({ products, onAddToCart }) {
     return (
         <>
             <div className="product-grid">
-
                 {products.map((product) => (
                     <ProductCard
                         key={product.id}
-                        title={product.title}
-                        price={product.price}
-                        category={product.category}
-                        rating={product.rating}
-                        count={product.ratingCount}
-                        image={product.image}
+                        product={product}
+                        onAddToCart={onAddToCart}
                     />
                 ))}
-
             </div>
         </>
-    )
+    );
 }

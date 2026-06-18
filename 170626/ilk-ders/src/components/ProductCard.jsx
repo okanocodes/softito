@@ -1,4 +1,6 @@
-export default function ProductCard({ title, price, category, rating, count, image }) {
+export default function ProductCard({ product, onAddToCart }) {
+    const { title, price, category, rating, ratingCount, image } = product;
+
     return (
         <>
             <div className="product-card">
@@ -11,16 +13,19 @@ export default function ProductCard({ title, price, category, rating, count, ima
                     <div className="product-rating">
                         <span>*</span>
                         <span>{rating}</span>
-                        <span className="text-gray-400">({count})</span>
+                        <span className="text-gray-400">({ratingCount})</span>
                     </div>
                     <div className="product-price-container">
-                        <span className="product-price">
-                            {price} TL
-                        </span>
-                        <button className="product-btn"><span>+</span></button>
+                        <span className="product-price">{price} TL</span>
+                        <button
+                            className="product-btn"
+                            onClick={() => onAddToCart(product)}
+                        >
+                            <span>+</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </>
-    )
+    );
 }

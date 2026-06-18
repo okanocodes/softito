@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import AddProductForm from "./components/AddProductForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,6 +7,7 @@ import ProductGrid from "./components/ProductGrid";
 import Sidebar from "./components/Sidebar";
 
 import { MOCK_PRODUCTS, MOCK_CATEGORIES } from "./productsMock";
+import ProductCart from "./components/ProductCart";
 
 function App() {
   const [products, setProducts] = useState(MOCK_PRODUCTS);
@@ -14,6 +15,9 @@ function App() {
   const [view, setView] = useState("home");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchInput, setSearchInput] = useState("");
+
+  const [cart, setCart] = useState([])
+  const [isCartOn, setIsCartOn] = useState(false)
 
   const handleAddProduct = (data) => {
     const newProduct = {
@@ -42,7 +46,7 @@ function App() {
       selectedCategory === "Tümü" || p.category === selectedCategory;
     const matchesSearch =
       p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.description.toLowerCase().includes(searchQuery.toLowerCase);
+      p.description.toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchesCategory && matchesSearch;
   });
@@ -58,6 +62,48 @@ function App() {
     setSearchQuery(searchInput);
   };
 
+
+  const handleAddtoCart = useCallback((product) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.id === product.id);
+
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+
+      return [
+        ...prevCart,
+        {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image: product.image,
+          quantity: 1,
+        },
+      ];
+    });
+  }, []);
+
+  const handleUpdateAmount = useCallback((productId, newQuantity) => {
+    if (newQuantity <= 0) {
+      setCart((prev) => prev.filter((item) => item.id !== productId));
+      return;
+    }
+
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  }, []);
+
+
+
+
   return (
     <>
       <Header
@@ -67,6 +113,8 @@ function App() {
         setSearchQuery={setSearchQuery}
         setSelectedCategory={setSelectedCategory}
         setView={setView}
+        onOpenCart={() => setIsCartOn(true)}
+        cartAmount={cart.length}
       />
       <Navbar
         categories={MOCK_CATEGORIES}
@@ -98,13 +146,15 @@ function App() {
                 </p>
               </div>
             ) : (
-              <ProductGrid products={filteredProducts} />
+              <ProductGrid products={filteredProducts} onAddToCart={handleAddtoCart} />
             )}
           </div>
         </main>
       ) : (
         <AddProductForm onAddProduct={handleAddProduct} categories={MOCK_CATEGORIES} setView={setView} />
       )}
+
+      <ProductCart cart={cart} isOpen={isCartOn} onClose={() => setIsCartOn(false)} onUpdateAmount={handleUpdateAmount} />
 
       <Footer />
     </>

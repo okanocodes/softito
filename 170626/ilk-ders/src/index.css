@@ -221,3 +221,80 @@ body {
 .hidden-scroll::-webkit-scrollbar {
   display: none;
 }
+
+/* 6. Sepet Çekmecesi (Slide-Over Drawer) */
+.drawer-arka-plan {
+  @apply fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-40 transition-opacity;
+}
+
+.sepet-drawer {
+  @apply fixed top-0 right-0 h-full w-full sm:w-88 bg-white border-l border-slate-200 shadow-2xl z-50 p-6 flex flex-col justify-between transition-transform duration-300 transform;
+}
+
+.sepet-drawer-hidden {
+  @apply translate-x-full;
+}
+
+.sepet-drawer-visible {
+  @apply translate-x-0;
+}
+
+.drawer-ust {
+  @apply flex items-center justify-between border-b border-slate-200 pb-4 mb-4;
+}
+
+.drawer-kapat-btn {
+  @apply text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer;
+}
+
+.sepet-liste-alani {
+  @apply divide-y divide-slate-100 overflow-y-auto flex-1 pr-1 space-y-3 mb-4 scrollbar-thin scrollbar-thumb-slate-200;
+}
+
+.sepet-urun-satir {
+  @apply flex justify-between items-start py-3;
+}
+
+.sepet-urun-ad {
+  @apply text-xs font-bold text-slate-800 line-clamp-1;
+}
+
+.sepet-urun-fiyat {
+  @apply text-[11px] text-slate-400 font-bold font-mono mt-0.5;
+}
+
+.sepet-adet-kontrolleri {
+  @apply flex items-center gap-1.5 mt-2;
+}
+
+.sepet-adet-btn {
+  @apply bg-slate-100 hover:bg-slate-200 text-slate-600 h-5 w-5 rounded-md flex items-center justify-center text-xs font-bold cursor-pointer transition-colors;
+}
+
+.sepet-adet-yazi {
+  @apply text-xs font-bold text-slate-800 w-4 text-center;
+}
+
+.sepet-satir-sag {
+  @apply flex flex-col items-end gap-2 justify-between h-full;
+}
+
+.sepet-satir-toplam-fiyat {
+  @apply text-xs font-extrabold text-orange-500 font-mono;
+}
+
+.sepet-satir-sil-btn {
+  @apply text-[10px] text-rose-500 hover:text-rose-700 font-bold cursor-pointer;
+}
+
+.sepet-alt-odeme-paneli {
+  @apply border-t border-slate-200 pt-4 space-y-3;
+}
+
+.odeme-detay-satiri {
+  @apply flex justify-between items-center text-sm;
+}
+
+.odeme-genel-toplam {
+  @apply text-lg font-black text-orange-500 font-mono;
+}
