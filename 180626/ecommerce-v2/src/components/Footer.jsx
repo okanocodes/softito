@@ -15,7 +15,7 @@ export default function Footer({ setView, setSelectedCategory }) {
             <span className="footer-link" onClick={() => setView('help')}>İletişim</span>
           </div>
           <div className="footer-section">
-            <h3 className="footer-title">Kategoriler</h3>
+            <h3 className="footer-title cursor-pointer" onClick={() => setView('categories')}>Kategoriler</h3>
             <span className="footer-link" onClick={() => handleCategorylink('Telefon')}>Telefon</span>
             <span className="footer-link" onClick={() => handleCategorylink('Aksesuar')}>Aksesuar</span>
             <span className="footer-link" onClick={() => handleCategorylink('Bilgisayar')}>Bilgisayar</span>
