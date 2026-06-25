@@ -253,7 +253,6 @@ export default function Reports() {
                       name="format-type"
                       defaultChecked
                       className="text-indigo-600"
-                      value="PDF"
                       onChange={(e) => setFormat(e.target.value)}
                       checked={format === "PDF"}
                     />
@@ -264,7 +263,6 @@ export default function Reports() {
                       type="radio"
                       name="format-type"
                       className="text-indigo-600"
-                      value="Excel"
                       onChange={(e) => setFormat(e.target.value)}
                       checked={format === "Excel"}
                     />
