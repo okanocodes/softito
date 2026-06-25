@@ -12,7 +12,7 @@ const initialState = {
       status: "Aktif",
     },
     {
-      id: 1,
+      id: 2,
       name: "Mehmet Yılmaz",
       company: "Yılmaz Mühendislik A.Ş.",
       email: "mehmet@yilmaz.com",
@@ -21,7 +21,7 @@ const initialState = {
       status: "Pasif",
     },
     {
-      id: 1,
+      id: 3,
       name: "Selami Yılmaz",
       company: "Yılmaz Mühendislik A.Ş.",
       email: "selami@yilmaz.com",
@@ -30,7 +30,7 @@ const initialState = {
       status: "Aktif",
     },
     {
-      id: 1,
+      id: 4,
       name: "Esra Yılmaz",
       company: "Yılmaz Mühendislik A.Ş.",
       email: "esra@yilmaz.com",
@@ -39,38 +39,40 @@ const initialState = {
       status: "Pasif",
     },
   ],
-  selecterCustomer: null,
+  selectedCustomer: null,
 };
 
 const customerSlice = createSlice({
   name: "customer",
   initialState,
-  reducers: (state, actions) => {
+  reducers: {
     addCustomer: (state, action) => {
       const nextId =
-        state.list.length > 0 ? Math.max(...state.list((c) => c.id)) + 1 : 1;
+        state.list.length > 0
+          ? Math.max(...state.list.map((c) => c.id)) + 1
+          : 1;
       state.list.push({
         id: nextId,
         balance: 0,
         ...action.payload,
       });
-    };
+    },
     editCustomer: (state, action) => {
       const index = state.list.findIndex((c) => c.id === action.payload.id);
       if (index !== -1) {
         state.list[index] = { ...state.list[index], ...action.payload };
       }
-      state.selecterCustomer = null;
-    };
+      state.selectedCustomer = null;
+    },
     deleteCustomer: (state, action) => {
       state.list = state.list.filter((c) => c.id !== action.payload);
-    };
+    },
     selectCustomerForEdit: (state, action) => {
-      state.selecterCustomer = action.payload;
-    };
+      state.selectedCustomer = action.payload;
+    },
     clearSelectedCustomer: (state) => {
-      state.selecterCustomer = null;
-    };
+      state.selectedCustomer = null;
+    },
   },
 });
 
