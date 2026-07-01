@@ -1,0 +1,194 @@
+{
+  "user": {
+    "id": "u1",
+    "name": "Alex Morgan",
+    "email": "alexdesouza@crmapp.com",
+    "jobTitle": "Sales Menager",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "role": "admin",
+    "phone": "+1 (415) 555-0100"
+  },
+  "clients": [
+    {
+      "id": "c1",
+      "firstName": "Maya",
+      "lastName": "Rodriguez",
+      "email": "m.rodriguez@acme.com",
+      "phone": "+1 (415) 555-0172",
+      "company": "Acme Inc.",
+      "status": "active",
+      "dealValue": 12000,
+      "avatar": "https://i.pravatar.cc/150?img=32",
+      "createdAt": "2026-03-14T09:20:00.000Z",
+      "notes": "Interested in enterprise plan, follow up next week. değiştirldi"
+    },
+    {
+      "id": "c2",
+      "firstName": "Jonas",
+      "lastName": "Weber",
+      "email": "jonas.weber@brightline.io",
+      "phone": "+49 30 555 0142",
+      "company": "Brightline GmbH",
+      "status": "lead",
+      "dealValue": 4500,
+      "avatar": "https://i.pravatar.cc/150?img=15",
+      "createdAt": "2026-05-02T14:05:00.000Z",
+      "notes": "Requested a demo, waiting on scheduling."
+    },
+    {
+      "id": "c3",
+      "firstName": "Sara",
+      "lastName": "Aksoy",
+      "email": "sara.aksoy@northgate.com",
+      "phone": "+90 212 555 0198",
+      "company": "Northgate Ltd.",
+      "status": "inactive",
+      "dealValue": 0,
+      "avatar": "https://i.pravatar.cc/150?img=47",
+      "createdAt": "2025-11-19T11:40:00.000Z",
+      "notes": "Churned, revisit in Q3."
+    },
+    {
+      "id": "A3tu_X6grO4",
+      "firstName": "deneme",
+      "lastName": "deneme soyisim",
+      "email": "mail@mail.com",
+      "phone": "+901231231212",
+      "company": "sadadsaas",
+      "status": "active",
+      "dealValue": 0,
+      "notes": "deneme note değiştirildi",
+      "createdAt": "2026-07-01T10:21:42.529Z",
+      "avatar": "https://i.pravatar.cc/150?img=57"
+    }
+  ],
+  "dashboard": {
+    "stats": {
+      "totalClients": 128,
+      "activeDeals": 24,
+      "revenue": 84500,
+      "growth": 12.5
+    },
+    "recentActivity": [
+      {
+        "id": "a_1782902648425",
+        "timestamp": "2026-07-01T10:44:08.425Z",
+        "type": "deal",
+        "description": "New task created: Client Dinner"
+      },
+      {
+        "id": "a_1782902596313",
+        "timestamp": "2026-07-01T10:43:16.313Z",
+        "type": "deal",
+        "description": "New task created: Set meet up"
+      },
+      {
+        "id": "a_1782902563127",
+        "timestamp": "2026-07-01T10:42:43.127Z",
+        "type": "status_change",
+        "clientId": "A3tu_X6grO4",
+        "description": "deneme deneme soyisim details were updated."
+      },
+      {
+        "id": "a_1782902532006",
+        "timestamp": "2026-07-01T10:42:12.006Z",
+        "type": "status_change",
+        "clientId": "c1",
+        "description": "Maya Rodriguez details were updated."
+      },
+      {
+        "id": "a1",
+        "type": "note",
+        "clientId": "c1",
+        "description": "Added a note to Maya Rodriguez",
+        "timestamp": "2026-06-29T10:12:00.000Z"
+      }
+    ],
+    "upcomingTasks": [
+      {
+        "id": "t1",
+        "title": "Follow up with Maya Rodriguez",
+        "dueDate": "2026-07-03T09:00:00.000Z",
+        "clientId": "c1"
+      },
+      {
+        "id": "t2",
+        "title": "Schedule demo with Jonas Weber",
+        "dueDate": "2026-07-05T13:00:00.000Z",
+        "clientId": "c2"
+      },
+      {
+        "id": "t3",
+        "title": "Send re-engagement email to Sara",
+        "dueDate": "2026-07-10T11:00:00.000Z",
+        "clientId": "c3"
+      },
+      {
+        "id": "t_1782902596262",
+        "title": "Set meet up",
+        "dueDate": "2026-07-03",
+        "clientId": "A3tu_X6grO4"
+      },
+      {
+        "id": "t_1782902648382",
+        "title": "Client Dinner",
+        "dueDate": "2026-07-03",
+        "clientId": "A3tu_X6grO4"
+      }
+    ],
+    "revenueChart": [
+      {
+        "month": "Apr",
+        "revenue": 62000
+      },
+      {
+        "month": "May",
+        "revenue": 74500
+      },
+      {
+        "month": "Jun",
+        "revenue": 84500
+      }
+    ]
+  },
+  "settings": {
+    "profile": {
+      "name": "Alex Morgan",
+      "email": "alexdesouza@crmapp.com",
+      "phone": "+1 (415) 555-0100",
+      "jobTitle": "Sales Menager",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    },
+    "notifications": {
+      "emailNotifications": true,
+      "pushNotifications": false,
+      "weeklyReport": true
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "en",
+      "currency": "USD"
+    },
+    "team": [
+      {
+        "id": "tm1",
+        "name": "Alex Morgan",
+        "email": "alex@crmapp.com",
+        "role": "admin"
+      },
+      {
+        "id": "tm2",
+        "name": "Priya Nair",
+        "email": "priya@crmapp.com",
+        "role": "editor"
+      },
+      {
+        "id": "tm3",
+        "name": "Leo Park",
+        "email": "leo@crmapp.com",
+        "role": "viewer"
+      }
+    ]
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}

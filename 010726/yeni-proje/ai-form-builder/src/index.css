@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: var(--primary);
+  --color-brand-primary-dark: var(--primary-dark);
+  --color-brand-secondary: var(--secondary);
+  --color-brand-secondary-dark: var(--secondary-dark);
+  --color-brand-secondary-tint: var(--secondary-tint);
+
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-border-subtle: var(--border-subtle);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-success-base: var(--success-base);
+  --color-success-bg: var(--success-bg);
+  --color-success-text: var(--success-text);
+
+  --color-warning-base: var(--warning-base);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-text: var(--warning-text);
+
+  --color-error-base: var(--error-base);
+  --color-error-bg: var(--error-bg);
+  --color-error-text: var(--error-text);
+
+  --font-sans: 'Outfit', 'Inter', sans-serif;
+}
+
+:root {
+  --primary: hsl(210, 75%, 37%);
+  --primary-dark: hsl(210, 82%, 27%);
+  
+  --secondary: hsl(165, 76%, 25%);
+  --secondary-dark: hsl(167, 82%, 17%);
+  --secondary-tint: hsl(159, 50%, 92%);
+
+  --bg-base: hsl(0, 0%, 98%);
+  --bg-surface: hsl(0, 0%, 100%);
+  --border-subtle: hsl(60, 5%, 90%);
+  
+  --text-primary: hsl(60, 2%, 17%);
+  --text-secondary: hsl(48, 3%, 36%);
+  --text-muted: hsl(52, 3%, 52%);
+
+  --success-base: hsl(87, 64%, 37%);
+  --success-bg: hsl(86, 47%, 91%);
+  --success-text: hsl(95, 78%, 18%);
+
+  --warning-base: hsl(35, 78%, 41%);
+  --warning-bg: hsl(38, 76%, 92%);
+  --warning-text: hsl(32, 89%, 21%);
+
+  --error-base: hsl(0, 72%, 59%);
+  --error-bg: hsl(0, 74%, 95%);
+  --error-text: hsl(0, 59%, 30%);
+}
+
+.dark {
+  --bg-base: hsl(60, 3%, 8%);
+  --bg-surface: hsl(60, 3%, 12%);
+  --border-subtle: hsl(60, 3%, 18%);
+  
+  --text-primary: hsl(47, 24%, 93%);
+  --text-secondary: hsl(49, 7%, 68%);
+  --text-muted: hsl(52, 3%, 52%);
+
+  --primary: hsl(210, 82%, 27%);
+  --primary-dark: hsl(210, 75%, 37%);
+
+  --secondary: hsl(167, 82%, 17%);
+  --secondary-dark: hsl(165, 76%, 25%);
+  --secondary-tint: hsl(165, 80%, 8%);
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Outfit', 'Inter', sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-panel {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}

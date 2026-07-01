@@ -1,4 +1,4 @@
-# Proje Başlatma Rehberi (React + Vite + Tailwind + MUI + huggingface inference + JSON Server + Redux Toolkit)
+# Proje Başlatma Rehberi (React + Vite + Material UI + JSON Server + Redux Toolkit)
 
 Bu şablon, yeni bir yazılım projesine başlarken projenin tüm detaylarını (tasarım, renkler, sayfalar, veri modeli ve state yönetimi) belirlemek ve Antigravity'nin projeyi sıfırdan kurmasını sağlamak amacıyla hazırlanmıştır.
 
@@ -8,21 +8,23 @@ Projenizi başlatmadan önce aşağıdaki alanları kendi projenizin gereksiniml
 
 ## 1. Genel Proje Bilgileri
 - **Proje Adı:** `AI Form Builder`
-- **Kısa Açıklama:** `
-Like Google Forms.
+- **Kısa Açıklama:** 
 
-Features
+  - Like Google Forms.
 
-Drag & Drop builder
-AI generates forms
-Conditional questions
-Analytics
-QR code
-Share links
-Responses dashboard`
-- **Hedef Kitle:** `All users who need to create forms`
+  - Features:
 
---- 
+    - Drag & Drop builder
+    - AI generates forms
+    - Conditional questions
+    - Analytics
+    - QR code
+    - Share links
+    - Responses dashboard
+
+- **Hedef Kitle:** `Kullanıcılar`
+
+---
 
 ## 2. Tasarım Sistemi ve Görsel Kimlik (Design System)
 
@@ -32,34 +34,56 @@ Antigravity'nin modern ve göz alıcı bir tasarım oluşturabilmesi için aşa�
 Tasarımda doğrudan standart kırmızı/mavi kullanmak yerine modern HSL renklerini tercih edin.
 
 - **Primary (Ana Renk - Örn. Marka Kimliği, Butonlar):**
-  - HSL: `hsl(262, 83%, 58%)` (Canlı Mor / Indigo)
+  - HSL: `hsl(210, 75%, 37%)` 
+  - Hover / dark mode: hsl(210, 82%, 27%)
   - Kullanım Alanı: Butonlar, aktif menü elemanları, odaklanılan kartlar.
 - **Secondary (İkinci Renk - Örn. Accent, Vurgu):**
-  - HSL: `hsl(316, 70%, 50%)` (Sıcak Pembe / Fuşya)
+  - HSL: `hsl(165, 76%, 25%)` 
+  - Hover / dark mode: `hsl(167, 82%, 17%)`
+  - Tint bg: `hsl(159, 50%, 92%)`
   - Kullanım Alanı: Bildirimler, badge'ler, dikkat çekici etiketler.
 - **Neutral Background (Arka Plan Renkleri):**
-  - Light Mode: `hsl(210, 40%, 98%)` (Çok açık gri-mavi)
-  - Dark Mode: `hsl(222, 47%, 11%)` (Koyu lacivert-siyah)
+  - Light Mode: `hsl(0, 0%, 100%)`
+  - Dark Mode: `hsl(60, 3%, 11%)`
 - **Neutral Text (Yazı Renkleri):**
-  - Light Mode: `hsl(217, 19%, 27%)` (Koyu Gri)
-  - Dark Mode: `hsl(210, 40%, 98%)` (Beyaza yakın)
+  - Light Mode:
+    - Primary: hsl(60, 2%, 17%)
+    - Secondary: hsl(48, 3%, 36%)
+    - Muted: hsl(52, 3%, 52%)
+  - Dark Mode:
+    - Primary: hsl(47, 24%, 93%)
+    - Secondary: hsl(49, 7%, 68%)
+    - Muted: hsl(52, 3%, 52%)
 - **Semantic Colors (Durum Renkleri):**
-  - Success (Başarı): `hsl(142, 71%, 45%)` (Zümrüt Yeşili)
-  - Warning (Uyarı): `hsl(38, 92%, 50%)` (Amber Sarısı)
-  - Error (Hata): `hsl(350, 89%, 60%)` (Gül Kırmızısı)
+  - Success (Başarı):
+    - base: hsl(87, 64%, 37%)
+    - bg: hsl(86, 47%, 91%)
+    - text: hsl(95, 78%, 18%)
+  - Warning (Uyarı):
+    - base: hsl(35, 78%, 41%)
+    - bg: hsl(38, 76%, 92%)
+    - text: hsl(32, 89%, 21%) 
+  - Error (Hata):
+    - base: hsl(0, 72%, 59%)
+    - bg: hsl(0, 74%, 95%)
+    - text: hsl(0, 59%, 30%)
 
 ### Tipografi ve Fontlar
 - **Birincil Yazı Tipi:** `Outfit` veya `Inter` (Google Fonts'tan otomatik çekilecek)
 - **Başlıklar (Headings):** `font-semibold` veya `font-bold`
 - **Gövde Metni (Body):** `font-normal` ve `antialiased`
 
-
+<!-- ### UI Özellikleri ve Efektler
+- **Glassmorphic Kartlar:** Arka planda `backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20` kullanımı.
+- **Gölgeler (Shadows):** Butonlar ve kartlar için yumuşak gölgeler (`shadow-lg shadow-purple-500/10`).
+- **Mikro Etkileşimler:** `transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]` hover ve tıklama efektleri. -->
 
 ---
 
 ## 3. Sayfa Yapısı ve Yönlendirmeler (Page Routes)
 
 Uygulamanızda yer alacak sayfaları ve bunların alt bileşenlerini listeleyin.
+
 
 - **`/` (Landing Page)**
   - Amaç: Ürünün tanıtımı.
@@ -313,32 +337,134 @@ JSON Server kullanarak ayağa kaldıracağımız yerel API'nin veri yapısını 
 
 ```json
 {
-  "projects": [
-    {
-      "id": "1",
-      "title": "E-Ticaret Arayüz Tasarımı",
-      "clientId": "101",
-      "status": "in_progress",
-      "budget": 12500,
-      "dueDate": "2026-07-15",
-      "tasks": [
-        { "id": "t1", "text": "Wireframe Çizimi", "completed": true },
-        { "id": "t2", "text": "UI Kit Hazırlanması", "completed": false }
-      ]
-    }
-  ],
+  "user": {
+    "id": "u1",
+    "name": "Alex Morgan",
+    "email": "alex@crmapp.com",
+    "jobTitle": "Sales Manager",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "role": "admin"
+  },
   "clients": [
     {
-      "id": "101",
-      "name": "Ahmet Yılmaz",
-      "company": "Kuzey Yazılım",
-      "email": "ahmet@kuzeyyazilim.com",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+      "id": "c1",
+      "firstName": "Maya",
+      "lastName": "Rodriguez",
+      "email": "m.rodriguez@acme.com",
+      "phone": "+1 (415) 555-0172",
+      "company": "Acme Inc.",
+      "status": "active",
+      "dealValue": 12000,
+      "avatar": "https://i.pravatar.cc/150?img=32",
+      "createdAt": "2026-03-14T09:20:00.000Z",
+      "notes": "Interested in enterprise plan, follow up next week."
+    },
+    {
+      "id": "c2",
+      "firstName": "Jonas",
+      "lastName": "Weber",
+      "email": "jonas.weber@brightline.io",
+      "phone": "+49 30 555 0142",
+      "company": "Brightline GmbH",
+      "status": "lead",
+      "dealValue": 4500,
+      "avatar": "https://i.pravatar.cc/150?img=15",
+      "createdAt": "2026-05-02T14:05:00.000Z",
+      "notes": "Requested a demo, waiting on scheduling."
+    },
+    {
+      "id": "c3",
+      "firstName": "Sara",
+      "lastName": "Aksoy",
+      "email": "sara.aksoy@northgate.com",
+      "phone": "+90 212 555 0198",
+      "company": "Northgate Ltd.",
+      "status": "inactive",
+      "dealValue": 0,
+      "avatar": "https://i.pravatar.cc/150?img=47",
+      "createdAt": "2025-11-19T11:40:00.000Z",
+      "notes": "Churned, revisit in Q3."
     }
   ],
+  "dashboard": {
+    "stats": {
+      "totalClients": 128,
+      "activeDeals": 24,
+      "revenue": 84500,
+      "growth": 12.5
+    },
+    "recentActivity": [
+      {
+        "id": "a1",
+        "type": "note",
+        "clientId": "c1",
+        "description": "Added a note to Maya Rodriguez",
+        "timestamp": "2026-06-29T10:12:00.000Z"
+      },
+      {
+        "id": "a2",
+        "type": "deal",
+        "clientId": "c2",
+        "description": "New deal created for Jonas Weber",
+        "timestamp": "2026-06-28T16:45:00.000Z"
+      },
+      {
+        "id": "a3",
+        "type": "status_change",
+        "clientId": "c3",
+        "description": "Sara Aksoy marked as inactive",
+        "timestamp": "2026-06-27T09:30:00.000Z"
+      }
+    ],
+    "upcomingTasks": [
+      {
+        "id": "t1",
+        "title": "Follow up with Maya Rodriguez",
+        "dueDate": "2026-07-03T09:00:00.000Z",
+        "clientId": "c1"
+      },
+      {
+        "id": "t2",
+        "title": "Schedule demo with Jonas Weber",
+        "dueDate": "2026-07-05T13:00:00.000Z",
+        "clientId": "c2"
+      },
+      {
+        "id": "t3",
+        "title": "Send re-engagement email to Sara",
+        "dueDate": "2026-07-10T11:00:00.000Z",
+        "clientId": "c3"
+      }
+    ],
+    "revenueChart": [
+      { "month": "Apr", "revenue": 62000 },
+      { "month": "May", "revenue": 74500 },
+      { "month": "Jun", "revenue": 84500 }
+    ]
+  },
   "settings": {
-    "darkMode": false,
-    "notificationsEnabled": true
+    "profile": {
+      "name": "Alex Morgan",
+      "email": "alex@crmapp.com",
+      "phone": "+1 (415) 555-0100",
+      "jobTitle": "Sales Manager",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    },
+    "notifications": {
+      "emailNotifications": true,
+      "pushNotifications": false,
+      "weeklyReport": true
+    },
+    "preferences": {
+      "theme": "light",
+      "language": "en",
+      "currency": "USD"
+    },
+    "team": [
+      { "id": "tm1", "name": "Alex Morgan", "email": "alex@crmapp.com", "role": "admin" },
+      { "id": "tm2", "name": "Priya Nair", "email": "priya@crmapp.com", "role": "editor" },
+      { "id": "tm3", "name": "Leo Park", "email": "leo@crmapp.com", "role": "viewer" }
+    ]
   }
 }
 ```
@@ -349,6 +475,7 @@ JSON Server kullanarak ayağa kaldıracağımız yerel API'nin veri yapısını 
 
 Uygulamada kullanılacak global slice (state) yapılarını ve içerdikleri anahtar değerleri listeleyin.
 
+# Redux State Yapısı
 
 ### 1. `authSlice`
 
@@ -544,6 +671,7 @@ Uygulamada kullanılacak global slice (state) yapılarını ve içerdikleri anah
 }
 ```
 
+---
 
 ## 6. Antigravity Geliştirme Sırası ve Talimatları
 
@@ -552,11 +680,11 @@ Antigravity'nin bu `project.md` dosyasını okuyarak sırasıyla hangi adımlar�
 1. **Adım 1: Klasör Yapısını İncele ve Ayarla**:
    - `src/` klasörünün altında `components/`, `pages/`, `store/`, `hooks/` dizinlerini oluştur.
 2. **Adım 2: Bağımlılıkları ve Konfigürasyonu Yapılandır**:
-   - `@reduxjs/toolkit`, `react-redux`, `react-router-dom`, `axios`, `lucide-react`, `@huggingface/inference`, `@mui/material @emotion/react @emotion/styled` paketlerini yükle.
+   - `@reduxjs/toolkit`, `react-redux`, `react-router-dom`, `axios`, `lucide-react`, `@mui/material @emotion/react @emotion/styled`, `@huggingface/inference` paketlerini yükle.
    - `tailwind.config.js` dosyasını yukarıda belirtilen renk paletine (HSL değerleriyle) göre güncelle.
 3. **Adım 3: Store ve Slice Dosyalarını Oluştur**:
    - `store/index.js` dosyasını oluştur ve store'u uygulamaya bağla.
-   - İlk olarak `authSlice.js`, `clientsSlice.js` `projectsSlice.js` `responsesSlice.js` `editorSlice.js` `aiSlice.js` `uiSlice.js`  dosyalarını async thunk'ları ile birlikte yaz.
+   - `authSlice.js` `formsSlice.js` `questionsSlice.js` `responsesSlice.js` `editorSlice.js` `aiSlice.js` `uiSlice.js` dosyalarını async thunk'ları ile birlikte yaz.
 4. **Adım 4: JSON Server Kurulumu**:
    - Proje kökünde `db.json` dosyasını oluştur ve doldur.
    - Projenin `package.json` dosyasına `"server": "json-server --watch db.json --port 5000"` scriptini ekle.

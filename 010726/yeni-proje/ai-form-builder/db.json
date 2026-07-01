@@ -1,0 +1,584 @@
+{
+  "user": {
+    "id": "u1",
+    "name": "Alex Morgan",
+    "email": "alex@crmapp.com",
+    "jobTitle": "Sales Manager",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "role": "admin"
+  },
+  "clients": [
+    {
+      "id": "c1",
+      "firstName": "Maya",
+      "lastName": "Rodriguez",
+      "email": "m.rodriguez@acme.com",
+      "phone": "+1 (415) 555-0172",
+      "company": "Acme Inc.",
+      "status": "active",
+      "dealValue": 12000,
+      "avatar": "https://i.pravatar.cc/150?img=32",
+      "createdAt": "2026-03-14T09:20:00.000Z",
+      "notes": "Interested in enterprise plan, follow up next week."
+    },
+    {
+      "id": "c2",
+      "firstName": "Jonas",
+      "lastName": "Weber",
+      "email": "jonas.weber@brightline.io",
+      "phone": "+49 30 555 0142",
+      "company": "Brightline GmbH",
+      "status": "lead",
+      "dealValue": 4500,
+      "avatar": "https://i.pravatar.cc/150?img=15",
+      "createdAt": "2026-05-02T14:05:00.000Z",
+      "notes": "Requested a demo, waiting on scheduling."
+    },
+    {
+      "id": "c3",
+      "firstName": "Sara",
+      "lastName": "Aksoy",
+      "email": "sara.aksoy@northgate.com",
+      "phone": "+90 212 555 0198",
+      "company": "Northgate Ltd.",
+      "status": "inactive",
+      "dealValue": 0,
+      "avatar": "https://i.pravatar.cc/150?img=47",
+      "createdAt": "2025-11-19T11:40:00.000Z",
+      "notes": "Churned, revisit in Q3."
+    }
+  ],
+  "dashboard": {
+    "stats": {
+      "totalClients": 128,
+      "activeDeals": 24,
+      "revenue": 84500,
+      "growth": 12.5
+    },
+    "recentActivity": [
+      {
+        "id": "a1",
+        "type": "note",
+        "clientId": "c1",
+        "description": "Added a note to Maya Rodriguez",
+        "timestamp": "2026-06-29T10:12:00.000Z"
+      },
+      {
+        "id": "a2",
+        "type": "deal",
+        "clientId": "c2",
+        "description": "New deal created for Jonas Weber",
+        "timestamp": "2026-06-28T16:45:00.000Z"
+      },
+      {
+        "id": "a3",
+        "type": "status_change",
+        "clientId": "c3",
+        "description": "Sara Aksoy marked as inactive",
+        "timestamp": "2026-06-27T09:30:00.000Z"
+      }
+    ],
+    "upcomingTasks": [
+      {
+        "id": "t1",
+        "title": "Follow up with Maya Rodriguez",
+        "dueDate": "2026-07-03T09:00:00.000Z",
+        "clientId": "c1"
+      },
+      {
+        "id": "t2",
+        "title": "Schedule demo with Jonas Weber",
+        "dueDate": "2026-07-05T13:00:00.000Z",
+        "clientId": "c2"
+      },
+      {
+        "id": "t3",
+        "title": "Send re-engagement email to Sara",
+        "dueDate": "2026-07-10T11:00:00.000Z",
+        "clientId": "c3"
+      }
+    ],
+    "revenueChart": [
+      {
+        "month": "Apr",
+        "revenue": 62000
+      },
+      {
+        "month": "May",
+        "revenue": 74500
+      },
+      {
+        "month": "Jun",
+        "revenue": 84500
+      }
+    ]
+  },
+  "settings": {
+    "profile": {
+      "name": "Alex Morgan",
+      "email": "alex@crmapp.com",
+      "phone": "+1 (415) 555-0100",
+      "jobTitle": "Sales Manager",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    },
+    "notifications": {
+      "emailNotifications": true,
+      "pushNotifications": false,
+      "weeklyReport": true
+    },
+    "preferences": {
+      "theme": "light",
+      "language": "en",
+      "currency": "USD"
+    },
+    "team": [
+      {
+        "id": "tm1",
+        "name": "Alex Morgan",
+        "email": "alex@crmapp.com",
+        "role": "admin"
+      },
+      {
+        "id": "tm2",
+        "name": "Priya Nair",
+        "email": "priya@crmapp.com",
+        "role": "editor"
+      },
+      {
+        "id": "tm3",
+        "name": "Leo Park",
+        "email": "leo@crmapp.com",
+        "role": "viewer"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "id": "f1",
+      "title": "Müşteri Geri Bildirim Formu",
+      "description": "Hizmetlerimiz hakkındaki görüşlerinizi bizimle paylaşın.",
+      "createdAt": "2026-06-25T10:00:00.000Z",
+      "status": "published",
+      "shareId": "feedback-1",
+      "theme": "light",
+      "submitMessage": "Geri bildiriminiz başarıyla kaydedildi, teşekkür ederiz!",
+      "passwordProtection": "",
+      "customDomain": ""
+    },
+    {
+      "id": "f2",
+      "title": "İş Başvuru Formu",
+      "description": "Ekibimize katılmak için lütfen aşağıdaki bilgileri doldurun.",
+      "createdAt": "2026-06-28T14:30:00.000Z",
+      "status": "draft",
+      "shareId": "job-app-2",
+      "theme": "light",
+      "submitMessage": "Başvurunuz alınmıştır.",
+      "passwordProtection": "",
+      "customDomain": ""
+    },
+    {
+      "title": "Müşteri Memnuniyeti Anketi",
+      "description": "Size daha iyi hizmet verebilmemiz için lütfen deneyiminizi değerlendirin.",
+      "status": "draft",
+      "shareId": "waypgcgqo",
+      "theme": "light",
+      "submitMessage": "Yanıtınız başarıyla kaydedildi!",
+      "id": "7navXOjOZ_8",
+      "createdAt": "2026-07-01T12:18:49.190Z"
+    },
+    {
+      "title": "Başlıksız Form",
+      "description": "Lütfen form açıklamasını girin.",
+      "status": "draft",
+      "shareId": "wwdyezxjd",
+      "theme": "light",
+      "submitMessage": "Yanıtınız kaydedildi, teşekkür ederiz!",
+      "id": "LWR95SkwOKM",
+      "createdAt": "2026-07-01T12:20:01.779Z"
+    },
+    {
+      "title": "Ayrıntılı İş Başvuru Şablonu",
+      "description": "Açık pozisyonlarınız için adaylardan nitelik ve deneyim detaylarını toplayın.",
+      "status": "draft",
+      "shareId": "of8kagufs",
+      "theme": "light",
+      "submitMessage": "Yanıtınız başarıyla kaydedildi, katılımınız için teşekkür ederiz!",
+      "id": "Eldd9QtZxys",
+      "createdAt": "2026-07-01T12:20:47.703Z"
+    },
+    {
+      "title": "Müşteri Memnuniyeti Anketi",
+      "description": "Size daha iyi hizmet verebilmemiz için lütfen deneyiminizi değerlendirin.",
+      "status": "draft",
+      "shareId": "qugcuvo5n",
+      "theme": "light",
+      "submitMessage": "Yanıtınız başarıyla kaydedildi!",
+      "id": "gCyAyIUX-lQ",
+      "createdAt": "2026-07-01T12:28:58.670Z"
+    },
+    {
+      "title": "Müşteri Geri Bildirim Formu",
+      "description": "Müşterilerinizin ürünleriniz ve hizmetleriniz hakkındaki memnuniyetini ölçün.",
+      "status": "draft",
+      "shareId": "5akyehquq",
+      "theme": "light",
+      "submitMessage": "Yanıtınız başarıyla kaydedildi, katılımınız için teşekkür ederiz!",
+      "id": "LMRD29-PPy8",
+      "createdAt": "2026-07-01T12:29:30.348Z"
+    },
+    {
+      "title": "Başlıksız Form",
+      "description": "Lütfen form açıklamasını girin.",
+      "status": "draft",
+      "shareId": "hcv7od3do",
+      "theme": "light",
+      "submitMessage": "Yanıtınız kaydedildi, teşekkür ederiz!",
+      "id": "asUw0eMVq_0",
+      "createdAt": "2026-07-01T12:30:10.283Z"
+    },
+    {
+      "title": "Başlıksız Form",
+      "description": "Lütfen form açıklamasını girin.",
+      "status": "draft",
+      "shareId": "gjgsgom1j",
+      "theme": "light",
+      "submitMessage": "Yanıtınız kaydedildi, teşekkür ederiz!",
+      "id": "_xZXnjDJhpg",
+      "createdAt": "2026-07-01T12:53:10.474Z"
+    },
+    {
+      "title": "Ödev",
+      "description": "Lütfen form açıklamasını girin.",
+      "status": "draft",
+      "shareId": "6zttehbd7",
+      "theme": "light",
+      "submitMessage": "Yanıtınız kaydedildi, teşekkür ederiz!",
+      "id": "ZmCsBRKTkZc",
+      "createdAt": "2026-07-01T12:58:12.724Z"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "formId": "f1",
+      "type": "text",
+      "label": "Adınız Soyadınız",
+      "required": true
+    },
+    {
+      "id": "q2",
+      "formId": "f1",
+      "type": "email",
+      "label": "E-posta Adresiniz",
+      "required": true
+    },
+    {
+      "id": "q3",
+      "formId": "f1",
+      "type": "rating",
+      "label": "Hizmet kalitemizi 1-5 arasında puanlayın",
+      "required": true
+    },
+    {
+      "id": "q4",
+      "formId": "f1",
+      "type": "textarea",
+      "label": "Önerileriniz ve Görüşleriniz",
+      "required": false
+    },
+    {
+      "id": "q5",
+      "formId": "f2",
+      "type": "text",
+      "label": "Ad Soyad",
+      "required": true
+    },
+    {
+      "id": "q6",
+      "formId": "f2",
+      "type": "select",
+      "label": "Başvurulan Departman",
+      "options": [
+        "Mühendislik",
+        "Pazarlama",
+        "Satış",
+        "İK"
+      ],
+      "required": true
+    },
+    {
+      "id": "q7",
+      "formId": "f2",
+      "type": "number",
+      "label": "Deneyim Süresi (Yıl)",
+      "required": false
+    },
+    {
+      "formId": "7navXOjOZ_8",
+      "type": "rating",
+      "label": "Hizmet kalitemizi 1-5 arasında puanlayın",
+      "required": true,
+      "options": [],
+      "id": "9V5XoaLqWdU"
+    },
+    {
+      "formId": "7navXOjOZ_8",
+      "type": "radio",
+      "label": "Bizi arkadaşlarınıza tavsiye eder misiniz?",
+      "required": true,
+      "options": [
+        "Evet, kesinlikle",
+        "Belki",
+        "Hayır, tavsiye etmem"
+      ],
+      "id": "kr2Fab4uOx0"
+    },
+    {
+      "formId": "7navXOjOZ_8",
+      "type": "checkbox",
+      "label": "En çok hangi özelliğimizi beğendiniz?",
+      "required": false,
+      "options": [
+        "Kullanım Kolaylığı",
+        "Tasarım / Arayüz",
+        "Müşteri Desteği",
+        "Fiyatlandırma"
+      ],
+      "id": "UkOXNOO89qU"
+    },
+    {
+      "formId": "7navXOjOZ_8",
+      "type": "textarea",
+      "label": "Görüş ve Önerileriniz",
+      "required": false,
+      "options": [],
+      "id": "57zsh56ds7k"
+    },
+    {
+      "formId": "7navXOjOZ_8",
+      "type": "checkbox",
+      "label": "Bizimle iletişime geçmek ister misiniz?",
+      "required": false,
+      "options": [
+        "Evet, e-posta ile dönün"
+      ],
+      "id": "O0ROQ29bCv8"
+    },
+    {
+      "formId": "Eldd9QtZxys",
+      "type": "text",
+      "label": "Aday Adı Soyadı",
+      "required": true,
+      "options": [],
+      "id": "DwBC2SlfU90"
+    },
+    {
+      "formId": "Eldd9QtZxys",
+      "type": "email",
+      "label": "E-posta",
+      "required": true,
+      "options": [],
+      "id": "leoWp24ox6Q"
+    },
+    {
+      "formId": "Eldd9QtZxys",
+      "type": "text",
+      "label": "Telefon No",
+      "required": true,
+      "options": [],
+      "id": "EPlTjBDA18w"
+    },
+    {
+      "formId": "Eldd9QtZxys",
+      "type": "select",
+      "label": "Başvurulan Departman",
+      "required": true,
+      "options": [
+        "Mühendislik",
+        "Pazarlama",
+        "Satış",
+        "İK"
+      ],
+      "id": "FglSlnBDkQA"
+    },
+    {
+      "formId": "Eldd9QtZxys",
+      "type": "number",
+      "label": "Deneyim Süresi (Yıl)",
+      "required": false,
+      "options": [],
+      "id": "G0MkgP85A3s"
+    },
+    {
+      "formId": "Eldd9QtZxys",
+      "type": "textarea",
+      "label": "Neden bizimle çalışmak istiyorsunuz?",
+      "required": false,
+      "options": [],
+      "id": "ZVJpkZC6JfY"
+    },
+    {
+      "formId": "gCyAyIUX-lQ",
+      "type": "rating",
+      "label": "Hizmet kalitemizi 1-5 arasında puanlayın",
+      "required": true,
+      "options": [],
+      "id": "yOs8MWPFV2g"
+    },
+    {
+      "formId": "gCyAyIUX-lQ",
+      "type": "radio",
+      "label": "Bizi arkadaşlarınıza tavsiye eder misiniz?",
+      "required": true,
+      "options": [
+        "Evet, kesinlikle",
+        "Belki",
+        "Hayır, tavsiye etmem"
+      ],
+      "id": "0tSy-5OZWNA"
+    },
+    {
+      "formId": "gCyAyIUX-lQ",
+      "type": "checkbox",
+      "label": "En çok hangi özelliğimizi beğendiniz?",
+      "required": false,
+      "options": [
+        "Kullanım Kolaylığı",
+        "Tasarım / Arayüz",
+        "Müşteri Desteği",
+        "Fiyatlandırma"
+      ],
+      "id": "6J1-bO9QCKg"
+    },
+    {
+      "formId": "gCyAyIUX-lQ",
+      "type": "textarea",
+      "label": "Görüş ve Önerileriniz",
+      "required": false,
+      "options": [],
+      "id": "8G61Z_FjFVs"
+    },
+    {
+      "formId": "gCyAyIUX-lQ",
+      "type": "checkbox",
+      "label": "Bizimle iletişime geçmek ister misiniz?",
+      "required": false,
+      "options": [
+        "Evet, e-posta ile dönün"
+      ],
+      "id": "YaGz5jJhu0c"
+    },
+    {
+      "formId": "LMRD29-PPy8",
+      "type": "text",
+      "label": "Adınız Soyadınız",
+      "required": true,
+      "options": [],
+      "id": "NL4hvtU9zgc"
+    },
+    {
+      "formId": "LMRD29-PPy8",
+      "type": "email",
+      "label": "E-posta Adresiniz",
+      "required": true,
+      "options": [],
+      "id": "meTeSk8_NDA"
+    },
+    {
+      "formId": "LMRD29-PPy8",
+      "type": "rating",
+      "label": "Hizmet kalitemizi 1-5 arasında puanlayın",
+      "required": true,
+      "options": [],
+      "id": "aEYCkzfvdEw"
+    },
+    {
+      "formId": "LMRD29-PPy8",
+      "type": "textarea",
+      "label": "Görüş ve Önerileriniz",
+      "required": false,
+      "options": [],
+      "id": "Tc0ePBNfJUA"
+    },
+    {
+      "id": "QJT-VP3M5do",
+      "formId": "_xZXnjDJhpg",
+      "type": "checkbox",
+      "label": "Yeni Çoklu Seçim Alanı",
+      "required": false,
+      "options": [
+        "Seçenek 1",
+        "Seçenek 2",
+        "Seçenek 3"
+      ]
+    },
+    {
+      "id": "Y4tpjIXcdG8",
+      "formId": "_xZXnjDJhpg",
+      "type": "date",
+      "label": "Yeni Tarih Alanı",
+      "required": false,
+      "options": []
+    },
+    {
+      "id": "46eU3r3-N7M",
+      "formId": "_xZXnjDJhpg",
+      "type": "select",
+      "label": "Yeni Açılır Liste Alanı",
+      "required": false,
+      "options": [
+        "Seçenek 1",
+        "Seçenek 2",
+        "Seçenek 3"
+      ]
+    }
+  ],
+  "responses": [
+    {
+      "id": "r1",
+      "formId": "f1",
+      "answers": {
+        "q1": "Jane Doe",
+        "q2": "jane@example.com",
+        "q3": 5,
+        "q4": "Destek ekibi harikaydı!"
+      },
+      "submittedAt": "2026-06-29T10:15:00.000Z",
+      "browser": "Chrome",
+      "device": "Desktop",
+      "country": "United States"
+    },
+    {
+      "id": "r2",
+      "formId": "f1",
+      "answers": {
+        "q1": "Can Yılmaz",
+        "q2": "can.y@example.com",
+        "q3": 4,
+        "q4": "Fiyatlar biraz daha uygun olabilir."
+      },
+      "submittedAt": "2026-06-30T11:45:00.000Z",
+      "browser": "Safari",
+      "device": "Mobile",
+      "country": "Turkey"
+    },
+    {
+      "id": "akJD64G6syU",
+      "formId": "_xZXnjDJhpg",
+      "answers": {
+        "QJT-VP3M5do": [
+          "Seçenek 1",
+          "Seçenek 2"
+        ],
+        "Y4tpjIXcdG8": "2026-07-10",
+        "46eU3r3-N7M": "Seçenek 1"
+      },
+      "submittedAt": "2026-07-01T12:56:23.527Z",
+      "browser": "Chrome",
+      "device": "Desktop",
+      "country": "United States"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
